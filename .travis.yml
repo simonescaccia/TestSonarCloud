@@ -3,9 +3,9 @@ jdk:
 - openjdk11
 
 addons:
-sonarcloud:
-organization: "simonescaccia"
-token: "52ab25500117da339ade0789df9eacf708508e0f"
+  sonarcloud:
+    organization: "simonescaccia"
+    token: "52ab25500117da339ade0789df9eacf708508e0f"
 
 script:
 - ant build
