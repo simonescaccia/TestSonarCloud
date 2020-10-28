@@ -5,7 +5,7 @@ jdk:
 addons:
 sonarcloud:
 organization: "simonescaccia"
-token: "de4573ee8d22fb5a73f33c433834abea3026436b"
+token: "52ab25500117da339ade0789df9eacf708508e0f"
 
 script:
 - ant build
