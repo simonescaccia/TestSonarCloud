@@ -11,5 +11,6 @@ public class HelloWorld{
 		
 		logger.log(Level.INFO, "Hello Travis CI!!");
 	
+		logger.log(Level.INFO, "Try to commit only update src folder!!");
 	}
 }
