@@ -1,0 +1,7 @@
+Problema eclipse:
+-travis vuole la cartella bin (verificare se vuota solamente gli da fastidio)
+-eclipse fa il commit solo sulla cartella src e la cartella bin la elimina 
+-se non faccio il commit su eclipse devo chiudere il progetto su eclipse e fare il CLenup UP su TSVN
+
+
+-se a travis interessa solo non avere una cartella vuota, eliminare la sincronizzazione di .bin su eclipse
