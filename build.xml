@@ -11,6 +11,12 @@
     <path id="provaSonarCloud.classpath">
         <pathelement location="bin"/>
     </path>
+    <path id="run.New_configuration (1).classpath">
+        <path refid="provaSonarCloud.classpath"/>
+    </path>
+    <path id="run.HelloWorld (2).classpath">
+        <path refid="provaSonarCloud.classpath"/>
+    </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
@@ -46,5 +52,15 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
+    </target>
+    <target name="New_configuration (1)">
+        <java classname="helloworld.HelloWorld" failonerror="true" fork="yes">
+            <classpath refid="run.New_configuration (1).classpath"/>
+        </java>
+    </target>
+    <target name="HelloWorld (2)">
+        <java classname="helloworld.HelloWorld" failonerror="true" fork="yes">
+            <classpath refid="run.HelloWorld (2).classpath"/>
+        </java>
     </target>
 </project>
