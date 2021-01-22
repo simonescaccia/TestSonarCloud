@@ -3,25 +3,19 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="provaSonarCloud">
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="ProvaSonarCloud">
     <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../eclipse/java-2020-09/eclipse/"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="14"/>
     <property name="source" value="14"/>
-    <path id="provaSonarCloud.classpath">
+    <path id="ProvaSonarCloud.classpath">
         <pathelement location="bin"/>
-    </path>
-    <path id="run.New_configuration (1).classpath">
-        <path refid="provaSonarCloud.classpath"/>
-    </path>
-    <path id="run.HelloWorld (2).classpath">
-        <path refid="provaSonarCloud.classpath"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
-                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -36,7 +30,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <classpath refid="provaSonarCloud.classpath"/>
+            <classpath refid="ProvaSonarCloud.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -52,15 +46,5 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
-    </target>
-    <target name="New_configuration (1)">
-        <java classname="helloworld.HelloWorld" failonerror="true" fork="yes">
-            <classpath refid="run.New_configuration (1).classpath"/>
-        </java>
-    </target>
-    <target name="HelloWorld (2)">
-        <java classname="helloworld.HelloWorld" failonerror="true" fork="yes">
-            <classpath refid="run.HelloWorld (2).classpath"/>
-        </java>
     </target>
 </project>
